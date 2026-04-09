@@ -64,11 +64,12 @@ public class OpenAiService : IAiService
             try
             {
                 using var doc = JsonDocument.Parse(data);
-                chunk = doc.RootElement
+                var delta = doc.RootElement
                     .GetProperty("choices")[0]
-                    .GetProperty("delta")
-                    .GetProperty("content")
-                    .GetString();
+                    .GetProperty("delta");
+
+                if (delta.TryGetProperty("content", out var contentProp))
+                    chunk = contentProp.GetString();
             }
             catch (JsonException)
             {

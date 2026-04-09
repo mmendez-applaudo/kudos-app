@@ -13,7 +13,7 @@ using System.Reflection;
 [assembly: System.Reflection.AssemblyCompanyAttribute("KudosApp.Domain")]
 [assembly: System.Reflection.AssemblyConfigurationAttribute("Debug")]
 [assembly: System.Reflection.AssemblyFileVersionAttribute("1.0.0.0")]
-[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+441768f63aed87bfc6e70845d96df6da40c4c7c6")]
+[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+327740f328bb9adfe685e7dc185972d3909eb63a")]
 [assembly: System.Reflection.AssemblyProductAttribute("KudosApp.Domain")]
 [assembly: System.Reflection.AssemblyTitleAttribute("KudosApp.Domain")]
 [assembly: System.Reflection.AssemblyVersionAttribute("1.0.0.0")]
