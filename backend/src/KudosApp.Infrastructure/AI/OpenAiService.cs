@@ -11,13 +11,16 @@ public class OpenAiService : IAiService
 {
     private readonly HttpClient _httpClient;
     private readonly string _apiKey;
+    private readonly string _model;
     private const string ChatCompletionsUrl = "https://api.openai.com/v1/chat/completions";
+    private const string DefaultModel = "gpt-4o";
 
     public OpenAiService(HttpClient httpClient, IConfiguration configuration)
     {
         _httpClient = httpClient;
         _apiKey = configuration["OpenAI:ApiKey"]
             ?? throw new InvalidOperationException("OpenAI API key is not configured.");
+        _model = configuration["OpenAI:Model"] ?? DefaultModel;
     }
 
     public async IAsyncEnumerable<string> SuggestKudosMessageAsync(
@@ -31,7 +34,7 @@ public class OpenAiService : IAiService
 
         var requestBody = new
         {
-            model = "gpt-4o",
+            model = _model,
             stream = true,
             messages = new[]
             {
@@ -88,7 +91,7 @@ public class OpenAiService : IAiService
 
         var requestBody = new
         {
-            model = "gpt-4o",
+            model = _model,
             stream = false,
             messages = new[]
             {

@@ -10,6 +10,7 @@ namespace KudosApp.Infrastructure.Services;
 
 public class JwtService : IJwtService
 {
+    private const int DefaultExpirationDays = 7;
     private readonly IConfiguration _configuration;
 
     public JwtService(IConfiguration configuration)
@@ -38,7 +39,7 @@ public class JwtService : IJwtService
         };
 
         var expiration = DateTime.UtcNow.AddDays(
-            int.TryParse(_configuration["Jwt:ExpirationDays"], out var days) ? days : 7);
+            int.TryParse(_configuration["Jwt:ExpirationDays"], out var days) ? days : DefaultExpirationDays);
 
         var token = new JwtSecurityToken(
             issuer: issuer,
