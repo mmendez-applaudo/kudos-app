@@ -13,7 +13,7 @@ using System.Reflection;
 [assembly: System.Reflection.AssemblyCompanyAttribute("KudosApp.Application")]
 [assembly: System.Reflection.AssemblyConfigurationAttribute("Debug")]
 [assembly: System.Reflection.AssemblyFileVersionAttribute("1.0.0.0")]
-[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+959e4ce17141451dd133ce22bd90c8912afabe8c")]
+[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+85735c642fb8dc7796b7555722be717532d091e0")]
 [assembly: System.Reflection.AssemblyProductAttribute("KudosApp.Application")]
 [assembly: System.Reflection.AssemblyTitleAttribute("KudosApp.Application")]
 [assembly: System.Reflection.AssemblyVersionAttribute("1.0.0.0")]
