@@ -37,11 +37,14 @@ public class JwtService : IJwtService
             new Claim(JwtRegisteredClaimNames.Jti, Guid.NewGuid().ToString())
         };
 
+        var expiration = DateTime.UtcNow.AddDays(
+            int.TryParse(_configuration["Jwt:ExpirationDays"], out var days) ? days : 7);
+
         var token = new JwtSecurityToken(
             issuer: issuer,
             audience: audience,
             claims: claims,
-            expires: DateTime.UtcNow.AddDays(7),
+            expires: expiration,
             signingCredentials: credentials);
 
         return new JwtSecurityTokenHandler().WriteToken(token);

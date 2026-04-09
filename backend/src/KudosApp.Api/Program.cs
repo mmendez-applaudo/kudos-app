@@ -85,11 +85,17 @@ builder.Services.AddScoped<IPasswordService, PasswordService>();
 // HttpClient for OpenAI
 builder.Services.AddHttpClient<IAiService, OpenAiService>();
 
-// CORS
+// CORS — allow any origin in development; restrict in production via Cors:AllowedOrigins config
 builder.Services.AddCors(options =>
 {
     options.AddDefaultPolicy(policy =>
-        policy.AllowAnyOrigin().AllowAnyHeader().AllowAnyMethod());
+    {
+        var allowedOrigins = builder.Configuration.GetSection("Cors:AllowedOrigins").Get<string[]>();
+        if (allowedOrigins is { Length: > 0 })
+            policy.WithOrigins(allowedOrigins).AllowAnyHeader().AllowAnyMethod();
+        else
+            policy.AllowAnyOrigin().AllowAnyHeader().AllowAnyMethod();
+    });
 });
 
 var app = builder.Build();
