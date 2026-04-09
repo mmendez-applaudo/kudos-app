@@ -16,7 +16,8 @@ public class OpenAiService : IAiService
     public OpenAiService(HttpClient httpClient, IConfiguration configuration)
     {
         _httpClient = httpClient;
-        _apiKey = configuration["OpenAI:ApiKey"] ?? string.Empty;
+        _apiKey = configuration["OpenAI:ApiKey"]
+            ?? throw new InvalidOperationException("OpenAI API key is not configured.");
     }
 
     public async IAsyncEnumerable<string> SuggestKudosMessageAsync(
@@ -69,7 +70,7 @@ public class OpenAiService : IAiService
                     .GetProperty("content")
                     .GetString();
             }
-            catch
+            catch (JsonException)
             {
                 // skip malformed chunks
             }

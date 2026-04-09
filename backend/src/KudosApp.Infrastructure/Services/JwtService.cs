@@ -19,9 +19,12 @@ public class JwtService : IJwtService
 
     public string GenerateToken(User user)
     {
-        var secret = _configuration["Jwt:Secret"]!;
-        var issuer = _configuration["Jwt:Issuer"]!;
-        var audience = _configuration["Jwt:Audience"]!;
+        var secret = _configuration["Jwt:Secret"]
+            ?? throw new InvalidOperationException("JWT Secret is not configured.");
+        var issuer = _configuration["Jwt:Issuer"]
+            ?? throw new InvalidOperationException("JWT Issuer is not configured.");
+        var audience = _configuration["Jwt:Audience"]
+            ?? throw new InvalidOperationException("JWT Audience is not configured.");
 
         var key = new SymmetricSecurityKey(Encoding.UTF8.GetBytes(secret));
         var credentials = new SigningCredentials(key, SecurityAlgorithms.HmacSha256);

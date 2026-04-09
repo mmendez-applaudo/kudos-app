@@ -17,14 +17,15 @@ public class CreateKudosCommandHandler : IRequestHandler<CreateKudosCommand, Kud
 
     public async Task<KudosDto> Handle(CreateKudosCommand request, CancellationToken cancellationToken)
     {
-        var recipient = await _context.Users.FindAsync(new object[] { request.RecipientId }, cancellationToken)
-            ?? throw new KeyNotFoundException("Recipient not found.");
+        var recipientTask = _context.Users.FindAsync(new object[] { request.RecipientId }, cancellationToken).AsTask();
+        var senderTask = _context.Users.FindAsync(new object[] { request.SenderId }, cancellationToken).AsTask();
+        var categoryTask = _context.Categories.FindAsync(new object[] { request.CategoryId }, cancellationToken).AsTask();
 
-        var sender = await _context.Users.FindAsync(new object[] { request.SenderId }, cancellationToken)
-            ?? throw new KeyNotFoundException("Sender not found.");
+        await Task.WhenAll(recipientTask, senderTask, categoryTask);
 
-        var category = await _context.Categories.FindAsync(new object[] { request.CategoryId }, cancellationToken)
-            ?? throw new KeyNotFoundException("Category not found.");
+        var recipient = await recipientTask ?? throw new KeyNotFoundException("Recipient not found.");
+        var sender = await senderTask ?? throw new KeyNotFoundException("Sender not found.");
+        var category = await categoryTask ?? throw new KeyNotFoundException("Category not found.");
 
         var kudos = new KudosApp.Domain.Entities.Kudos
         {

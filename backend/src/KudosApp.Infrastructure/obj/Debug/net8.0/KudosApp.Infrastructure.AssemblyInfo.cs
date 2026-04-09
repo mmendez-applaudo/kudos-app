@@ -13,7 +13,7 @@ using System.Reflection;
 [assembly: System.Reflection.AssemblyCompanyAttribute("KudosApp.Infrastructure")]
 [assembly: System.Reflection.AssemblyConfigurationAttribute("Debug")]
 [assembly: System.Reflection.AssemblyFileVersionAttribute("1.0.0.0")]
-[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+8104dad60b0d749dcb1e17a44e7ae3d450d6bd33")]
+[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+441768f63aed87bfc6e70845d96df6da40c4c7c6")]
 [assembly: System.Reflection.AssemblyProductAttribute("KudosApp.Infrastructure")]
 [assembly: System.Reflection.AssemblyTitleAttribute("KudosApp.Infrastructure")]
 [assembly: System.Reflection.AssemblyVersionAttribute("1.0.0.0")]
