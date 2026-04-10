@@ -53,6 +53,9 @@ builder.Services.AddAuthentication(options =>
     };
 });
 
+builder.Services.AddHttpClient();
+builder.Services.AddScoped<IOpenAiService, OpenAiService>();
+
 var app = builder.Build();
 
 app.UseCors("AllowAll");
