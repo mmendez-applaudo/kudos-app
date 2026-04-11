@@ -28,5 +28,10 @@ export const routes: Routes = [
     canActivate: [authGuard],
     loadComponent: () =>
       import('./features/kudos/give-kudos/give-kudos.component').then((m) => m.GiveKudosComponent)
+  },
+  {
+    path: 'leaderboard',
+    loadComponent: () =>
+      import('./features/leaderboard/leaderboard.component').then((m) => m.LeaderboardComponent)
   }
 ];
