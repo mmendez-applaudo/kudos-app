@@ -10,7 +10,9 @@ export interface AuthUser {
 
 export interface AuthResponse {
   token: string;
-  user: AuthUser;
+  name: string;
+  email: string;
+  role: string;
 }
 
 @Injectable({ providedIn: 'root' })
@@ -48,7 +50,11 @@ export class AuthService {
     }
 
     localStorage.setItem('kudos_token', response.token);
-    localStorage.setItem('kudos_user', JSON.stringify(response.user));
+    localStorage.setItem('kudos_user', JSON.stringify({
+        name: response.name,
+        email: response.email,
+        role: response.role
+    }));
   }
 
   getToken(): string | null {
