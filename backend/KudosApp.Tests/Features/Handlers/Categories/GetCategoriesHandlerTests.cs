@@ -1,12 +1,11 @@
-using Xunit;
 using FluentAssertions;
-using Microsoft.EntityFrameworkCore;
-using KudosApp.Infrastructure.Data;
-using KudosApp.Infrastructure.Features.Categories.Handlers;
 using KudosApp.Application.Features.Categories.Queries;
 using KudosApp.Domain.Entities;
+using KudosApp.Infrastructure.Data;
+using KudosApp.Infrastructure.Features.Categories.Handlers;
+using Microsoft.EntityFrameworkCore;
 
-namespace KudosApp.Tests.Categories;
+namespace KudosApp.Tests.Features.Handlers.Categories;
 
 public class GetCategoriesHandlerTests
 {
