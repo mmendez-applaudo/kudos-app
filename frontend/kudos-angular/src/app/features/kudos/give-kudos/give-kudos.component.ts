@@ -358,7 +358,7 @@ export class GiveKudosComponent {
       )
       .subscribe({
         next: (response) => {
-          const suggestedCategoryName = this.extractString(response, ['categoryName', 'suggestedCategory', 'category']);
+          const suggestedCategoryName = this.extractString(response, ['suggestion', 'categoryName', 'suggestedCategory', 'category']);
           if (!suggestedCategoryName) {
             this.messageService.add({
               severity: 'warn',
