@@ -23,6 +23,7 @@ public class LoginHandler(AppDbContext db, ITokenService tokenService) : IReques
 
         return new AuthResponse
         {
+            Id = user.Id,
             Token = token,
             Name = user.Name,
             Email = user.Email,
