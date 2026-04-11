@@ -11,6 +11,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "KudosApp.Domain", "KudosApp
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "KudosApp.Infrastructure", "KudosApp.Infrastructure\KudosApp.Infrastructure.csproj", "{144BFA99-9494-4ED6-AA07-EB68BEE3CEF5}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "KudosApp.Tests", "KudosApp.Tests\KudosApp.Tests.csproj", "{B851A03A-A790-4EF2-9DE4-AB865FACEAC4}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -36,5 +38,9 @@ Global
 		{144BFA99-9494-4ED6-AA07-EB68BEE3CEF5}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{144BFA99-9494-4ED6-AA07-EB68BEE3CEF5}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{144BFA99-9494-4ED6-AA07-EB68BEE3CEF5}.Release|Any CPU.Build.0 = Release|Any CPU
+		{B851A03A-A790-4EF2-9DE4-AB865FACEAC4}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{B851A03A-A790-4EF2-9DE4-AB865FACEAC4}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{B851A03A-A790-4EF2-9DE4-AB865FACEAC4}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{B851A03A-A790-4EF2-9DE4-AB865FACEAC4}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 EndGlobal
