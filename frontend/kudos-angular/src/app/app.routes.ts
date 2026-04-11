@@ -1,5 +1,7 @@
 import { Routes } from '@angular/router';
 
+import { authGuard } from './core/guards/auth.guard';
+
 export const routes: Routes = [
   {
     path: '',
@@ -20,5 +22,11 @@ export const routes: Routes = [
     path: 'feed',
     loadComponent: () =>
       import('./features/feed/feed.component').then((m) => m.FeedComponent)
+  },
+  {
+    path: 'kudos/give',
+    canActivate: [authGuard],
+    loadComponent: () =>
+      import('./features/kudos/give-kudos/give-kudos.component').then((m) => m.GiveKudosComponent)
   }
 ];

@@ -3,6 +3,7 @@ import { Injectable, inject } from '@angular/core';
 import { Observable } from 'rxjs';
 
 export interface AuthUser {
+  userId: string;
   name: string;
   email: string;
   role: string;
@@ -10,6 +11,8 @@ export interface AuthUser {
 
 export interface AuthResponse {
   token: string;
+  userId?: string;
+  id?: string;
   name: string;
   email: string;
   role: string;
@@ -50,11 +53,15 @@ export class AuthService {
     }
 
     localStorage.setItem('kudos_token', response.token);
-    localStorage.setItem('kudos_user', JSON.stringify({
+    localStorage.setItem(
+      'kudos_user',
+      JSON.stringify({
+        userId: response.userId ?? response.id ?? '',
         name: response.name,
         email: response.email,
         role: response.role
-    }));
+      } satisfies AuthUser)
+    );
   }
 
   getToken(): string | null {
@@ -78,11 +85,13 @@ export class AuthService {
     try {
       const parsed = JSON.parse(rawUser) as Partial<AuthUser>;
       if (
+        typeof parsed.userId === 'string' &&
         typeof parsed.name === 'string' &&
         typeof parsed.email === 'string' &&
         typeof parsed.role === 'string'
       ) {
         return {
+          userId: parsed.userId,
           name: parsed.name,
           email: parsed.email,
           role: parsed.role
