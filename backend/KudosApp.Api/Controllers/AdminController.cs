@@ -23,10 +23,7 @@ public class AdminController(IMediator mediator) : ControllerBase
     [HttpPut("users/{id}/role")]
     public async Task<ActionResult<UserResponse>> ChangeUserRole(Guid id, [FromBody] ChangeUserRoleCommand command)
     {
-        if (id != command.UserId)
-            return BadRequest("UserId in URL and body do not match.");
-
-        var response = await mediator.Send(command);
+        var response = await mediator.Send(new ChangeUserRoleCommand(id, command.Role));
         return Ok(response);
     }
 
