@@ -1,0 +1,12 @@
+/home/runner/work/kudos-app/kudos-app/backend/src/KudosApp.Domain/bin/Debug/net8.0/KudosApp.Domain.deps.json
+/home/runner/work/kudos-app/kudos-app/backend/src/KudosApp.Domain/bin/Debug/net8.0/KudosApp.Domain.dll
+/home/runner/work/kudos-app/kudos-app/backend/src/KudosApp.Domain/bin/Debug/net8.0/KudosApp.Domain.pdb
+/home/runner/work/kudos-app/kudos-app/backend/src/KudosApp.Domain/obj/Debug/net8.0/KudosApp.Domain.GeneratedMSBuildEditorConfig.editorconfig
+/home/runner/work/kudos-app/kudos-app/backend/src/KudosApp.Domain/obj/Debug/net8.0/KudosApp.Domain.AssemblyInfoInputs.cache
+/home/runner/work/kudos-app/kudos-app/backend/src/KudosApp.Domain/obj/Debug/net8.0/KudosApp.Domain.AssemblyInfo.cs
+/home/runner/work/kudos-app/kudos-app/backend/src/KudosApp.Domain/obj/Debug/net8.0/KudosApp.Domain.csproj.CoreCompileInputs.cache
+/home/runner/work/kudos-app/kudos-app/backend/src/KudosApp.Domain/obj/Debug/net8.0/KudosApp.Domain.sourcelink.json
+/home/runner/work/kudos-app/kudos-app/backend/src/KudosApp.Domain/obj/Debug/net8.0/KudosApp.Domain.dll
+/home/runner/work/kudos-app/kudos-app/backend/src/KudosApp.Domain/obj/Debug/net8.0/refint/KudosApp.Domain.dll
+/home/runner/work/kudos-app/kudos-app/backend/src/KudosApp.Domain/obj/Debug/net8.0/KudosApp.Domain.pdb
+/home/runner/work/kudos-app/kudos-app/backend/src/KudosApp.Domain/obj/Debug/net8.0/ref/KudosApp.Domain.dll
